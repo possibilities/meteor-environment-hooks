@@ -12,11 +12,11 @@ For this to work server-side development machines need to have a file called `~/
 
 And in your code
 
-  if (Meteor.env.is_development)
-    console.log('development!');
+    if (Meteor.env.is_development)
+      console.log('development!');
 
-  if (Meteor.env.is_production)
-    console.log('production!');
+    if (Meteor.env.is_production)
+      console.log('production!');
 
 ### Client
 
