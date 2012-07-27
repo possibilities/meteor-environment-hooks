@@ -14,12 +14,12 @@ MeteorEnv = function(options) {
       console.log("You have to provide a list of production hosts for this to work on the client!");
     }
 
-    Handlebars.registerHelper('isDevelopment', function(options) {
+    Handlebars.registerHelper('ifDevelopment', function(options) {
       // console.log(Meteor.env.is_development, fn, inverse);
       return Meteor.env.is_development ? options.fn() : options.inverse();
     })
 
-    Handlebars.registerHelper('isProduction', function(options) {
+    Handlebars.registerHelper('ifProduction', function(options) {
       return Meteor.env.is_production ? options.fn() : options.inverse();
     })
 
