@@ -4,9 +4,9 @@ MeteorEnv = function(options) {
   if (!Meteor.env) {
     Meteor.env = {};
 
-    if (options.hosts && options.hosts.production) {
+    if (options.hosts) {
 
-      var isProductionHost = _.contains(options.hosts.production, window.location.hostname);
+      var isProductionHost = _.contains(options.hosts, window.location.hostname);
 
       Meteor.env.is_development = !isProductionHost;
       Meteor.env.is_production = isProductionHost;
