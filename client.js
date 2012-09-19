@@ -8,19 +8,19 @@ MeteorEnv = function(options) {
 
       var isProductionHost = _.contains(options.hosts, window.location.hostname);
 
-      Meteor.env.is_development = !isProductionHost;
-      Meteor.env.is_production = isProductionHost;
+      Meteor.env.isDevelopment = !isProductionHost;
+      Meteor.env.isProduction = isProductionHost;
     } else {
       console.log("You have to provide a list of production hosts for this to work on the client!");
     }
 
     Handlebars.registerHelper('ifDevelopment', function(options) {
-      // console.log(Meteor.env.is_development, fn, inverse);
-      return Meteor.env.is_development ? options.fn() : options.inverse();
+      // console.log(Meteor.env.isDevelopment, fn, inverse);
+      return Meteor.env.isDevelopment ? options.fn() : options.inverse();
     })
 
     Handlebars.registerHelper('ifProduction', function(options) {
-      return Meteor.env.is_production ? options.fn() : options.inverse();
+      return Meteor.env.isProduction ? options.fn() : options.inverse();
     })
 
   }

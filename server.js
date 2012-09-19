@@ -8,8 +8,8 @@ MeteorEnv = function(options) {
     var pathToConfig = process.env.HOME + '/.meteor.cfg';
 
     var configExists = path.existsSync(pathToConfig);
-    Meteor.env.is_development = configExists;
-    Meteor.env.is_production = !configExists;
+    Meteor.env.isDevelopment = configExists;
+    Meteor.env.isProduction = !configExists;
 
   }  
 };
